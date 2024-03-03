@@ -26,7 +26,7 @@ Para resolver as dificuldades encontradas, foram realizadas as seguintes ações
 
 2. **Uso do Grupo de Captura Lookahead positivo**
 
-   O grupo de captura lookahead foi utilizado para garantir que a busca pelos elementos do dicionário fosse precisa e não incluísse mais texto do que o desejado. O padrão final `(?=\n\n|$)` no grupo lookahead, presente ao fim da regex, garante que a busca alcance apenas o próximo elemento do dicionário, evitando quebras de página indesejadas.
+   O grupo de captura lookahead foi utilizado para garantir que a busca pelos elementos do dicionário fosse precisa e não incluísse mais texto do que o desejado. O padrão final `(?=\n\n|$)` no grupo lookahead, exemplo presente ao fim de uma das regex utilizadas no código, garante que a busca alcance apenas o próximo elemento do dicionário, evitando quebras de página indesejadas.
 
 3. **Garantindo a Existência de Título sem Descrição**
 
