@@ -10,20 +10,19 @@ texto = re.sub(r"\f", "", texto)
 texto = re.sub(r"\n\n(.+?)(?=\n\n|$)", r"\n\n@\1", texto, flags=re.DOTALL)
 texto = re.sub(r"@(.+?)\n\n(?=@|$)", r"@\1\n", texto, flags=re.DOTALL)
 
-
 # Extrair termos
 termos = re.findall(r"@(.+)\n([^@]+)", texto)
 
-titulo = "<h3 style='text-align: center;'> Dicionário Médico </h3>"
-descricao = "<p> Este é um dicionário desenvolvido na disciplina de PLNEB </p>"
+titulo = "<h3> Dicionário Médico </h3>"
+descricao = "<p style='text-align: center; font-size: 20px; padding-bottom: 15px;'> Este é um dicionário desenvolvido na disciplina de PLNEB </p>"
 
 body = "<body style='font-family: Arial, sans-serif;'>"
 for termo in termos:
     # Verifica se a descrição começa com uma tag HTML
     if termo[1].startswith("<"):
-        body += f"<h5> {termo[0]} </h5> {termo[1]} <hr/>"
+        body += f"<div style='background-color: #6ab7b9; color: white; padding: 10px; margin-bottom: 10px; border-radius: 10px;'> <h5> {termo[0]} </h5> {termo[1]} </div>"
     else:
-        body += f"<h5> {termo[0]} </h5> <p> {termo[1]} </p> <hr/>"
+        body += f"<div style='background-color: #6ab7b9; color: white; padding: 10px; margin-bottom: 10px; border-radius: 10px;'> <h5> {termo[0]} </h5> <p> {termo[1]} </p> </div>"
 
 body += "</body>"
 
@@ -44,12 +43,23 @@ body {{
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}}
+h3 {{
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: teal;
+    text-align: center;
+    width: 50%;
+    margin: 20px auto 0;
 }}
 h5 {{
-    color: #333;
+    color: black;
 }}
 p {{
-    color: #666;
+    color: black;
     line-height: 1.6;
 }}
 hr {{
@@ -59,16 +69,15 @@ hr {{
 }}
 </style>
 </head>
+{titulo}
 <body>
 <div class='container'>
-{titulo}
 {descricao}
 {body}
 </div>
 </body>
 </html>"""
 
-print(html)
-    
-with open("TPC3/tpc3.html", "w", encoding="utf-8") as file_out:
+
+with open("TPC3/TPC3.html", "w", encoding="utf-8") as file_out:
     file_out.write(html)
