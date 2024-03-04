@@ -7,8 +7,8 @@ texto = f.read()
 texto = re.sub(r"\f", "", texto)
 
 # Marcar designações
-texto = re.sub(r"\n\n(.+?)(?=\n\n|$)", r"\n\n@\1", texto, flags=re.DOTALL)
-texto = re.sub(r"@(.+?)\n\n(?=@|$)", r"@\1\n", texto, flags=re.DOTALL)
+texto = re.sub(r"\n\n(.+)", r"\n\n@\1", texto) #Coloca @ antes da designacao
+texto = re.sub(r"(@[^\n]+)\n(\n|\f)+", r"@\1\n", texto)
 
 # Extrair termos
 termos = re.findall(r"@(.+)\n([^@]+)", texto)
