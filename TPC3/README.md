@@ -24,12 +24,17 @@ Para resolver as dificuldades encontradas, foram realizadas as seguintes ações
 
    Foi utilizado o identificador "@" para marcar os elementos do dicionário. Essa marcação facilita a identificação e a extração dos termos e suas descrições durante o processamento do texto.
 
-2. **Uso do Grupo de Captura Lookahead positivo**
+2. **Melhoria na Marcação das Designações**
 
-   O grupo de captura lookahead foi utilizado para garantir que a busca pelos elementos do dicionário fosse precisa e não incluísse mais texto do que o desejado. O padrão final `(?=\n\n|$)` no grupo lookahead, exemplo presente ao fim de uma das regex utilizadas no código, garante que a busca alcance apenas o próximo elemento do dicionário, evitando quebras de página indesejadas.
+   Utilizou-se a função `re.sub()` para adicionar o caractere "@" antes de cada designação no texto. Isso foi alcançado com o padrão `"\n\n(.+)"`, que busca por dois caracteres de quebra de linha seguidos por qualquer caractere (exceto quebras de linha) e o substitui por `"\n\n@\1"`, adicionando o "@" antes do texto capturado.
 
-3. **Garantindo a Existência de Título sem Descrição**
+3. **Ajuste de Caracteres de Quebra de Página**
 
-   Para garantir que um elemento com título, mas sem descrição, não desformatasse a exibição, foi adicionada uma verificação no loop for que percorre os termos e suas descrições. Se uma descrição não começar com uma tag HTML, ela é encapsulada em um parágrafo para garantir a coesão visual dos elementos do dicionário no arquivo HTML final. Essa verificação foi realizada no loop for devido à dificuldade em aumentar a eficácia das expressões regulares para lidar com esse problema.
+   Para corrigir a presença indesejada de caracteres de quebra de página (\f), utilizou-se novamente a função `re.sub()`. O padrão `r"(@[^\n]+)\n(\n|\f)+"` busca por uma sequência marcada com "@" seguida por caracteres que não sejam quebras de linha, seguida por uma ou mais ocorrências de uma quebra de linha seguida por uma quebra de linha ou um caractere de quebra de página (\f). Esse padrão foi substituído por `r"@\1\n"`, que mantém apenas a marcação "@" seguida pelo texto capturado e uma quebra de linha.
+
+4. **Extração de Termos e Descrições**
+
+   Utilizou-se a função `re.findall()` para encontrar todos os termos médicos marcados com "@" e suas respectivas descrições no texto. O padrão `r"@(.+)\n([^@]+)"` captura uma sequência marcada com "@" seguida por qualquer caractere (exceto quebras de linha) como o primeiro grupo e uma quebra de linha, seguida por qualquer caractere (exceto "@") como o segundo grupo.
+
 
 
