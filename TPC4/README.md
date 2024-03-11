@@ -22,7 +22,11 @@ O site foi construído utilizando HTML, CSS e um pouco de JavaScript, garantindo
 
 - **Sobre o Clube:** Uma seção dedicada à história e conquistas significativas do Internacional, oferecendo aos visitantes um entendimento profundo sobre a trajetória e importância do clube.
 - **Hino e Partitura:** Inclui o hino oficial do clube em formato de texto e uma imagem da partitura, permitindo aos visitantes do site conhecer e escutar o hino.
-- **Galeria de Imagens do Estádio:** Utilizando um slider de imagens, esta seção exibe fotos do Estádio Beira-Rio, proporcionando uma visão imersiva do icônico estádio.
+- **Galeria de Imagens do Estádio:**
+  Utilizando um slider de imagens, esta seção exibe fotos do Estádio Beira-Rio, proporcionando uma visão imersiva do icônico estádio.
+
+  O código JavaScript associado a este slider de imagens permite a navegação entre as fotos do estádio Beira-Rio. Ele mantém um controle do índice do slide atual e usa funções para avançar ou retroceder nos slides quando os botões de navegação são clicados. Além disso, o código atualiza dinamicamente o texto descritivo com base na imagem atualmente exibida, fornecendo informações adicionais sobre cada foto do estádio.
+
 
 ### Rodapé (Footer)
 
