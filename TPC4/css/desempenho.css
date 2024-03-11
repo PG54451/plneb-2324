@@ -57,16 +57,17 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 150px;
+    margin-left: 20px; /* Espaçamento entre os itens da lista de navegação */
 }
 
-nav ul li:first-child{
-    margin-left: auto;
+nav ul li:first-child {
+    margin-left: 0; /* Remove a margem esquerda do primeiro item */
 }
 
 nav ul li:last-child {
     margin-right: 0;
 }
+
 
 nav ul li a {
     text-decoration: none;

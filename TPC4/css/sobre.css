@@ -11,7 +11,7 @@ body {
     height: 100vh; /* Faz com que o body tenha pelo menos a altura da tela */
     font-family: 'Barlow', sans-serif;
     color: white;
-    background-color: rgb(245,245,245);
+    background-color: rgb(245, 245, 245);
 }
 
 /* Estilos para o header */
@@ -24,18 +24,18 @@ header {
 .header-content {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Adicionado para dividir o conteúdo horizontalmente */
     max-width: 1200px;
     height: 50px;
     margin: 0 auto;
     padding: 0 20px;
-    justify-content: space-between;
 }
 
 /* Estilos para o ícone */
 .icon {
     width: 120px; /* Tamanho fixo do ícone */
     margin-left: -150px;
-    height: -20px; /* Corrigindo erro de sintaxe */
+    height: -20px;
 }
 
 /* Estilos para a marca (brand) */
@@ -58,12 +58,13 @@ header {
     margin: 5px 0;
 }
 
-.nav-bar{
+.nav-bar {
     justify-content: flex-end;
     display: flex;
     flex-grow: 1;
 }
 
+/* Estilos para a lista de navegação */
 nav ul {
     list-style-type: none;
     display: flex;
@@ -82,7 +83,6 @@ nav ul li:last-child {
     margin-right: 0;
 }
 
-
 nav ul li a {
     text-decoration: none;
     color: white;
@@ -94,75 +94,37 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+
 /* Conteúdo Principal */
 main {
     display: flex;
     justify-content: space-evenly;
     margin: 20px;
-    color:black;
+    color: black;
     padding-bottom: 60px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
-/* Estilos para a seção do hino */
-#hino {
-    flex-basis: 45%; /* Define a largura da seção do hino (50% do espaço disponível com espaço entre as seções) */
-    text-align: left; /* Alinha o texto à esquerda */
+#descricao {
     padding: 20px;
-    box-sizing: border-box; 
 }
 
-#hino .hino-content {
-    display: flex;
-    flex-direction: column;
-    margin-top: -10px;
-    margin-left: -160px;
+.descricao-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-#hino .hino-header {
-    margin-bottom: 10px; /* Espaçamento abaixo do cabeçalho */
+.descricao-content h2 {
+    margin-bottom: 20px;
 }
 
-#hino .hino-header h2 {
-    margin: 0; /* Remove margem do h2 */
+.descricao-content pre {
+    font-family: Arial, sans-serif; /* Definindo a fonte */
+    white-space: pre-wrap; /* Permitindo que o texto quebre linhas automaticamente */
+    line-height: 1.5; /* Definindo o espaçamento entre linhas */
 }
 
-#hino .hino-header h3 b {
-    font-weight: bold; /* Aplica negrito apenas ao texto dentro das tags <b> dentro das tags <h3> */
-}
-
-#hino .hino-text pre {
-    margin-top: 0; /* Remove margem superior do pre */
-    line-height: 1.6;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-#hino .hino-audio {
-    margin-top: auto; /* Empurra os controles de áudio para a parte inferior */
-}
-
-/* Estilos para a seção da partitura */
-#partitura {
-    flex-basis: 10%;
-    text-align: center;
-    margin-left: -100px;
-    margin-top: 10px;
-}
-
-#partitura .partitura-header{
-    text-align: center;
-    margin-left: -250px;
-}
-
-#partitura .partitura-img {
-    width: auto;
-    height: 80%;
-    margin-bottom: 50px;
-    margin-left: -250px;
-    max-width: 400px;
-}
 
 footer {
     background-color: #333;
