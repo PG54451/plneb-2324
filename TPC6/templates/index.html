@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="pesquisa-conceito">
+        <h2 class="mb-4">Conceitos Médicos:</h2>
+        <form class="d-flex justify-content-center mt-3" action="{{ url_for('index') }}" method="get">
+            <input class="form-control form-control-lg me-2 rounded-pill" type="search" name="pesquisa" placeholder="Pesquisar" aria-label="Pesquisar">
+        </form>
+    </div>
+    {% for conceito in conceitos %}
+        <div class="card card-conceito mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{{ url_for('conceito', nome=conceito['conceito_pt']) }}" style="text-decoration: none; color: inherit;">{{ conceito['conceito_pt'] }}</a></h5>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

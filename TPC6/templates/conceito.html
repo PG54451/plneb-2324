@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card shadow" style="border-radius: 0.5rem; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+        <div class="card-body">
+            <h3 class="card-title">{{ conceito.conceito_pt }}</h3>
+            <p class="card-text"><strong>Descrição: </strong>{{ conceito.desc }}</p>
+            <p class="card-text"><strong>Tradução em Inglês:</strong> {{ conceito.en }}</p>
+        </div>
+    </div>
+{% endblock %}
