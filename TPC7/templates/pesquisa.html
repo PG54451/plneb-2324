@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+    <h2>Resultados da Pesquisa</h2>
+    <table id="searchResultsTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Termo</th>
+                <th>Descrição</th>
+                <th>Tradução</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for termo, dados in resultados.items() %}
+                <tr>
+                    <td>{{ termo }}</td>
+                    <td>{{ dados.desc }}</td>
+                    <td>{{ dados.en }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

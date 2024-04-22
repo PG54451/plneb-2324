@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <table id="myTable" class="table table-striped table-bordered" style="width:100%" data-order='[[ 0, "asc" ]]'>
+        <thead>
+            <tr>
+                <th>Termo</th>
+                <th>Descrição</th>
+                <th>Tradução</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for termo, dados in conceitos.items() %}
+            <tr>
+                <td>{{ termo }}</td>
+                <td>{{ dados.desc }}</td>
+                <td>{{ dados.en }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
