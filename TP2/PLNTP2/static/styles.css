@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    gap: 18%;
+}
+
+.botoes_radio {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+label, button, a {
+    font-weight: bold;
+}
+
+.botoes_radio label {
+    background-color: #04aa6d;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.7s;
+}
+
+input[type="radio"]:checked + label {
+    color: #04aa6d;
+    background-color: white;
+}
+
+.remove-button {
+    display: inline-block;
+    margin-top: 20px;
+    color: #04aa6d;
+    text-decoration: none;
+}
+
+.formulario_index {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
+    margin: auto;
+    width:60%;
+    text-align: center;
+}
+
+.formulario_novo {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
+    margin: auto;
+    width: 40%;
+    text-align: center;
+}
+
+.formulario_edit {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1c1c1c;
+}
+
+input[type="text"], textarea, select {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #04aa6d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #04aa6d;
+    text-decoration: underline;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #04aa6d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.add-term {
+    background-color: #04aa6d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.add-term:hover {
+    background-color: #04aa6d;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: white;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

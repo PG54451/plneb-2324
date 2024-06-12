@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Term</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <h1 style="text-align: center;">Adicionar Novo Termo</h1>
+    <form class="formulario_novo" method="post" action="{{ url_for('novo_termo') }}">
+        <label for="termo">Termo:</label>
+        <input type="text" id="termo" name="termo" required><br>
+
+        <label for="categoria">Categoria(s):</label>
+        <input type="text" id="categoria" name="categoria" placeholder="Separate with commas" required><br>
+
+        <label for="descrição">Descrição:</label>
+        <textarea id="descrição" name="descrição" required></textarea><br>
+
+        <label for="tradução_en">Tradução:</label>
+        <input type="text" id="tradução_en" name="tradução inglês" required><br>
+
+        <button type="submit">Adicionar Termo</button>
+    </form>
+    <a style="display: flex; justify-content: center;" href="{{ url_for('index') }}">Página Inicial</a>
+</body>
+</html>
